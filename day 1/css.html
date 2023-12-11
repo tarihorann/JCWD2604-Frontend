@@ -1,0 +1,62 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css style</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      p {
+        color: red;
+      }
+      .mobil {
+        color: blue;
+      }
+
+      #avanza {
+        color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <p
+      style="
+        color: green;
+        font-size: 20px;
+        font-weight: 800;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      "
+    >
+      ini inline style
+    </p>
+
+    <p>test</p>
+    <p class="mobil" id="avanza">ini avanza</p>
+    <p class="mobil">ini mobil</p>
+    <p class="mobil" id="avanza" style="color: teal">ini mobil dengan inline</p>
+    <div>
+      <input type="checkbox" name="nameCb" id="cbCek" />
+      <label for="">coba cek</label>
+    </div>
+    <input type="text" name="" id="text" oninput="test()" />
+    <button onclick="cekbyName()">cek</button>
+  </body>
+  <script>
+    function test() {
+      const e = document.getElementById("text");
+      console.log(e.value);
+    }
+    function cek() {
+      const cekvalue = document.getElementById("cbCek");
+      console.log(cekvalue.checked);
+    }
+    function cekbyName() {
+      const cekvalue = document.getElementsByName("nameCb")[0];
+      console.log(cekvalue);
+      document.getElementById("text").value = "udin";
+    }
+  </script>
+</html>
