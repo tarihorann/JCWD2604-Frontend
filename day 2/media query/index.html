@@ -1,0 +1,36 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>media query</title>
+    <style>
+      body {
+        background-color: blueviolet;
+
+        @media screen and (max-width: 500px) {
+          background-color: blue;
+        }
+      }
+      @media screen and (max-width: 500px) and (min-width: 301px) {
+        h1 {
+          color: white;
+        }
+      }
+
+      @media screen and (max-width: 300px) {
+        body {
+          background-color: red;
+        }
+        h1 {
+          color: yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ayam</h1>
+  </body>
+</html>
