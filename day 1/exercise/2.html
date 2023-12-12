@@ -1,0 +1,163 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Table</title>
+    <style>
+      body {
+        color: white;
+        margin: 0;
+        background-image: url("./pngtree-colorful-and-beautiful-starry-sky-background-picture-image_2384589.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        margin: 20px 0px;
+        font-size: small;
+      }
+      h1 {
+        text-align: left;
+        background-color: rgba(226, 232, 242, 0.45);
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 5px 20px;
+        border-radius: 12px 12px 0px 0px;
+      }
+      .container {
+        width: 600px;
+        background-color: rgba(226, 232, 242, 0.3);
+        /* margin: 20px; */
+        border-radius: 12px;
+        padding-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        background-color: rgb(226, 232, 242, 0.3);
+        padding: 5px;
+      }
+      tr:nth-child(even) {
+        background-color: rgb(226, 232, 242, 0.3);
+      }
+      table,
+      tr {
+        /* border: 1px solid black; */
+        border-collapse: collapse;
+        text-align: center;
+      }
+      img {
+        width: 120px;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div class="container">
+        <h1>Animal Table</h1>
+        <table>
+          <tr>
+            <th>No.</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Food</th>
+            <th>Group</th>
+          </tr>
+
+          <tr>
+            <td>1</td>
+            <td>
+              <img
+                src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+                alt="cat"
+              />
+            </td>
+            <td>Smiling <sup>Cat</sup></td>
+            <td>Healthy <sub>Fish</sub></td>
+            <td>
+              <input type="radio" name="cat" id="" checked />
+              <label for="cat">Vertebrate</label>
+              <input type="radio" name="cat" id="" />
+              <label for="cat">Invertebrate</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Labrador_Retriever_portrait.jpg/1200px-Labrador_Retriever_portrait.jpg"
+                alt="dog"
+              />
+            </td>
+            <td>Happy <sup>Dog</sup></td>
+            <td>Fresh <sub>Meat</sub></td>
+            <td>
+              <input type="radio" name="dog" id="" checked />
+              <label for="dog">Vertebrate</label>
+              <input type="radio" name="dog" id="" />
+              <label for="dog">Invertebrate</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Schimpanse_Zoo_Leipzig.jpg/640px-Schimpanse_Zoo_Leipzig.jpg"
+                alt="simpanse"
+              />
+            </td>
+            <td>Confuse <sup>Simpanse</sup></td>
+            <td>Sweet <sub>Banana</sub></td>
+            <td>
+              <input type="radio" name="simp" id="" checked />
+              <label for="simp">Vertebrate</label>
+              <input type="radio" name="simp" id="" />
+              <label for="simp">Invertebrate</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>
+              <img
+                src="https://neurosciencenews.com/files/2023/09/jellyfish-memory-learning-neuroscience.jpg"
+                alt="jelly"
+              />
+            </td>
+            <td>Frisky <sup>Jellyfish</sup></td>
+            <td>Sweet <sub>Banana</sub></td>
+            <td>
+              <input type="radio" name="jell" id="" />
+              <label for="jell">Vertebrate</label>
+              <input type="radio" name="jell" id="" checked />
+              <label for="jell">Invertebrate</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>
+              <img
+              src=https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/GettyImages-508486981-1200x628.jpg"
+              alt="squid" />
+            </td>
+            <td>Swimming <sup>Squid</sup></td>
+            <td>Small <sub>Fish</sub></td>
+            <td>
+              <input type="radio" name="squid" id="" />
+              <label for="squid">Vertebrate</label>
+              <input type="radio" name="squid" id="" checked />
+              <label for="squid">Invertebrate</label>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>
