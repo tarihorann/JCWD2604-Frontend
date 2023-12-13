@@ -1,0 +1,199 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queen Band</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: sans-serif;
+        font-size: 15px;
+        margin: 0px;
+      }
+      nav {
+        display: flex;
+        position: sticky;
+        top: 0;
+        justify-content: space-between;
+        font-weight: 500;
+        background-color: black;
+        z-index: 1;
+      }
+      nav a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        padding: 12px 24px !important;
+        margin: 0;
+      }
+      .flex {
+        display: flex;
+      }
+      nav a:hover {
+        background-color: #f1f1f1;
+        color: black;
+      }
+      #search:hover {
+        background-color: #f44336;
+      }
+
+      #banner {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+      }
+
+      #banner img {
+        max-width: 2000px;
+        width: 100%;
+        object-fit: contain;
+        max-height: 1000px;
+      }
+
+      #header {
+        position: absolute;
+        color: white;
+        text-align: center;
+        padding: 32px 16px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+
+      h1 {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 4px;
+        font-weight: 400;
+      }
+
+      #band {
+        padding: 64px 16px;
+        max-width: 768px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+      }
+      #band p {
+        text-align: justify;
+        line-height: 1.5;
+      }
+      i {
+        color: rgba(0, 0, 0, 0.4);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 32px 0px;
+      }
+
+      .grid img {
+        max-width: 153px;
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      .member p {
+        text-align: center !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav>
+      <span class="flex">
+        <a href="#">home</a>
+        <a href="#band">band</a>
+        <a href="">tour</a>
+        <a href="">contact</a>
+        <a href="">more</a>
+      </span>
+
+      <span class="flex">
+        <a id="search" onclick="play()">play</a>
+      </span>
+    </nav>
+
+    <!-- banner -->
+    <div id="banner">
+      <img src="./171811.jpg" alt="" />
+      <div id="header">
+        <h2>Wembley Stadium</h2>
+        <p>Amid an atmosphere charged with pessimism</p>
+      </div>
+    </div>
+
+    <!-- band -->
+    <div id="band">
+      <h1>QUEEN</h1>
+      <i>we love music</i>
+      <p>
+        Queen are a British rock band formed in London in 1970 by Freddie
+        Mercury (lead vocals, piano), Brian May (guitar, vocals), and Roger
+        Taylor (drums, vocals), later joined by John Deacon (bass). Their
+        earliest works were influenced by progressive rock, hard rock, and heavy
+        metal, but the band gradually ventured into more conventional and
+        radio-friendly works by incorporating further styles, such as arena rock
+        and pop rock. Before forming Queen, May and Taylor had played together
+        in the band Smile. Mercury was a fan of Smile and encouraged them to
+        experiment with more elaborate stage and recording techniques. He joined
+        in 1970 and suggested the name "Queen". Deacon was recruited in February
+        1971, before the band released their self-titled debut album in 1973.
+        Queen first charted in the UK with their second album, Queen II, in
+        1974. Sheer Heart Attack later that year and A Night at the Opera in
+        1975 brought them international success.
+      </p>
+
+      <!-- members -->
+      <div class="grid">
+        <div class="member">
+          <p>Freddie Mercury</p>
+          <img
+            src="https://images.hindustantimes.com/rf/image_size_630x354/HT/p2/2020/03/05/Pictures/_9a869ac0-5ea2-11ea-ab89-cb4d4e6220f6.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="member">
+          <p>Brian May</p>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQbiLaualsT4vhf5KrIfAkTATqeSEHVPPA888YNth_C-eB7IszQxTkfLEcaK9rjmr8GY5ay696wEWSuVes"
+            alt=""
+          />
+        </div>
+
+        <div class="member">
+          <p>John Deacon</p>
+          <img
+            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTbs8iE-8MDBW15wk7XhIQd87qSz0Zt3rC5rr8loTeR1cEvGlw2"
+            alt=""
+          />
+        </div>
+
+        <div class="member">
+          <p>Roger Taylor</p>
+          <img
+            src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRBf8Hz0hWUWcRwEVaIYgMHlRkHzetHsWW3TS4u4n9V-2WyMo7x6iJ2PcvmtBIJ0RCwDETwaUGyUHr-B-Q"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <!-- audio -->
+      <audio src="./br.mp3" type="audio/mpeg" id="audio" autoplay />
+    </div>
+  </body>
+  <script>
+    function play() {
+      document.getElementById("audio").play();
+    }
+  </script>
+</html>
