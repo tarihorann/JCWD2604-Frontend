@@ -16,3 +16,12 @@ function App() {
 }
 
 export default App;
+
+//flow
+//components
+//props
+//state => variable
+//redux => global state (global variable)
+//react hooks => penggunaan library dalam function component
+
+//css framework

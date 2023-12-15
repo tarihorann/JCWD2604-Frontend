@@ -54,6 +54,7 @@ function BandListComponent() {
     <>
       <div className="grid">
         {members.map((val, idx) => (
+          // <CardComponent key={idx} src={val.src} name= {val.name} />
           <CardComponent key={idx} {...val} />
         ))}
       </div>

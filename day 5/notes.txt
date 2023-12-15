@@ -1,0 +1,32 @@
+npm create vite => generate react dari vite (membuat folder project)
+pilih react => javascript 
+change directory ke folder vite kalian. ex: cd intro
+npm install => untuk install semua package libraries yg ada di package.json
+npm run dev => untuk start project d
+npm install dan run dev harus dijalankan di dalam folder react tidak di luar
+
+
+flow dari react di vite 
+mencari index.html di dalam folder vite 
+dom diaccess lewat main.jsx 
+menciptakan virtual dom (id root)
+react dom akan ngeload seluruh isi dari argm yg di render
+contoh argument yg ada di dalam render adalah App.jsx 
+App.jsx adalah sebuah file yang memiliki function component di dalamnya
+setiap component akan memiliki return berbentuk html 
+sehingga hasil return dari component akan dikirimkan ke virtual DOM 
+
+dengan begitu dapat disimpulkan kita hanya menggunakan 1 html saja dan memanipulasi isi dari dom
+lewat component
+
+component adalah sebuah section/kepingan dari UI
+dengan menciptakan component kita dapat memanggil kepingan UI,
+sehingga apabila kita membutuhkan ui yang sama dengan component yang sudah kita buat
+kita tidak perlu membuat ulang 
+
+kita dapat mengirimkan sebuah value (string/obj/array/function/dll)
+ke dalam sebuah component lewat props
+component yang bisa dipassing props adalah component yang memiliki parent 
+parent akan mengirimkan value ke dalam children lewat props 
+tetapi children tidak dapat mengirimkan props ke parent
+
