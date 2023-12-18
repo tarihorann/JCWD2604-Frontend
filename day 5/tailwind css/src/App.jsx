@@ -16,6 +16,7 @@ import {
   Exercise9,
   LoopExercise,
 } from "./components/exercise";
+import { InstagramCardList } from "./components/instagram-card";
 import NavbarComponent, { IniComponent } from "./components/navbar";
 
 export default function App() {
@@ -28,10 +29,11 @@ export default function App() {
     "black",
     "yellow-800",
   ];
+  const menus = ["home", "profile", "settings", "about"];
 
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent logo="Naruto" nomor={false ? 1 : 0} menus={[...menus]} />
       <h1 className="text-3xl font-[900] underline">Hello world!</h1>
       <IniComponent />
 
@@ -57,6 +59,8 @@ export default function App() {
 
       <h1>ini pakai loop component</h1>
       <LoopExercise arr={arrColor} />
+
+      <InstagramCardList />
     </>
   );
 }

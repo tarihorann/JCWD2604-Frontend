@@ -1,15 +1,21 @@
 /** @format */
 
-function NavbarComponent() {
+function NavbarComponent({ logo, nomor, menus }) {
+  console.log(menus);
   return (
-    <div className="bg-black w-full py-6 text-white flex justify-between px-6 text-2xl font-bold">
-      <h1 className=" font-extrabold ">LOGO</h1>
+    <div className="bg-black w-full text-white flex justify-between p-6 text-2xl font-bold">
+      <h1 className=" font-extrabold ">{logo}</h1>
       <div className="flex gap-4">
-        <div>Home</div>
-        <div>Page 1</div>
+        {menus.map((menu, index) => (
+          <div className=" cursor-pointer" key={index}>
+            {menu}
+          </div>
+        ))}
+        {/* <div>Home</div>
+        <div>{nomor}</div>
         <div>Page 2</div>
         <div>Page 3</div>
-        <div>Page 4</div>
+        <div>Page 4</div> */}
       </div>
     </div>
   );

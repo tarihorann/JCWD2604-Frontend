@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/** @format */
+
+import { Avatar, Button, Center } from "@chakra-ui/react";
+import { CardList } from "./components/card";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Center flexDir={"column"} style={{ flexDirection: "column" }}>
+        <div>
+          <input type="button" value="ok" />
+        </div>
+
+        <div>
+          <Avatar src="https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg" />
+
+          <Button>ok</Button>
+        </div>
+      </Center>
+      <CardList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
