@@ -3,6 +3,11 @@ import { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../App";
 import { useDispatch } from "react-redux";
 import { decrement, increment } from "../redux/constant";
+import {
+  functionDecrementSlice,
+  functionIncrementSlice,
+  functionincrementbyAmountSlice,
+} from "../redux/slices/counterSlice";
 
 function TodoListPage() {
   const { setTotal } = useContext(ThemeContext);
@@ -41,10 +46,17 @@ function TodoListPage() {
   }, [todos]);
 
   const functionIncrement = () => {
-    dispatch({ type: increment });
+    dispatch(functionIncrementSlice()); //slice
+    dispatch({ type: increment }); //reducer
   };
   const functionDecrement = () => {
-    dispatch({ type: decrement });
+    dispatch(functionDecrementSlice()); //slice
+    dispatch({ type: decrement }); //reducer
+  };
+
+  const plus5 = () => {
+    dispatch({ type: "increment 5", payload: 5 });
+    dispatch(functionincrementbyAmountSlice(5));
   };
 
   return (
@@ -61,6 +73,9 @@ function TodoListPage() {
           onClick={functionIncrement}
         >
           increment
+        </button>
+        <button className=" bg-green-500 p-2 rounded-lg" onClick={plus5}>
+          plus 5
         </button>
       </div>
       <h1>All Tasks</h1>

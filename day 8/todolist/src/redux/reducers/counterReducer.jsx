@@ -11,6 +11,8 @@ export function counterReducer(state = initState, action) {
     return { value: state.value + 1 };
   } else if (action.type == decrement) {
     return { value: state.value - 1 };
+  } else if (action.type == "increment 5") {
+    return { value: state.value + action.payload };
   }
   return state;
 }
