@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { axiosInstance } from "../../api/axios";
 function RegisterPage() {
   const [user, setUser] = useState({
     name: "",
@@ -37,8 +38,8 @@ function RegisterPage() {
 
   const mendaftar = () => {
     if (user.email && user.name && user.password) {
-      axios
-        .post("http://localhost:2000/users", user)
+      axiosInstance()
+        .post("/users", user)
         .then((res) => {
           console.log(res.data);
           setUser({
@@ -51,6 +52,24 @@ function RegisterPage() {
         .catch((err) => console.log(err));
     }
   };
+
+  // const daftar2 = async () => {
+  //   try {
+  //     const check = await axios.get("http://localhost:2000/users", {
+  //       params: {
+  //         email: user.email,
+  //       },
+  //     });
+  //     if (check.data.length) {
+  //       throw new Error("email sudah terdaftar");
+  //     }
+
+  //     await axios.post("http://localhost:2000/users", user);
+  //     alert("register  berhasil");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <>

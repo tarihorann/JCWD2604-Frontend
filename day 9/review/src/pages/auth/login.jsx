@@ -1,12 +1,20 @@
 /** @format */
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { functionLogin } from "../../redux/slices/userSlice";
+import { useNavigate } from "react-router-dom";
+import { axiosInstance } from "../../api/axios";
+
 function LoginPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const login = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    axios
-      .get("http://localhost:2000/users", {
+    axiosInstance()
+      .get("/users", {
         params: { email, password },
       })
       .then((res) => {
@@ -14,6 +22,12 @@ function LoginPage() {
           const { name } = res.data[0];
 
           alert("welcome " + name);
+          delete res.data[0]?.password;
+          dispatch(functionLogin(...res.data));
+
+          localStorage.setItem("user", res.data[0].id);
+
+          navigate("/");
         } else {
           alert("user not found");
         }
