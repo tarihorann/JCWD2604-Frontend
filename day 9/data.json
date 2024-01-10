@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "email": "udin@rocketmail.com",
+      "password": "udin",
+      "name": "petot"
+    },
+    {
+      "id": "2",
+      "email": "mado@rocketmail.com",
+      "password": "mado",
+      "name": "suigetsu"
+    },
+    {
+      "id": "3",
+      "email": "madara@rocketmail.com",
+      "password": "uchiha",
+      "name": "madara"
+    }
+  ]
+}
