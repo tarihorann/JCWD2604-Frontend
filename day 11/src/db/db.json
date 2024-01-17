@@ -1,0 +1,28 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "bookName": "naruto",
+      "price": "300000",
+      "author": "masashi kishimoto"
+    },
+    {
+      "id": 2,
+      "bookName": "bleach",
+      "price": "320000",
+      "author": "tite kuboooos2"
+    },
+    {
+      "bookName": "komik",
+      "author": "komik test",
+      "price": "20000",
+      "id": 3
+    },
+    {
+      "bookName": "buku baru",
+      "author": "test",
+      "price": "2000",
+      "id": 4
+    }
+  ]
+}
