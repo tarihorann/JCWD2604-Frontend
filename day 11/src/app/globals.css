@@ -1,0 +1,16 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+td,
+th {
+  padding: 5px;
+  width: 148px;
+}
+
+input {
+  border: 1px solid;
+  width: 100%;
+}

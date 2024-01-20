@@ -1,6 +1,13 @@
 /** @format */
 
+import TestComponent from "./test";
+
 function Page() {
-  return <div>here </div>;
+  return (
+    <div>
+      here
+      <TestComponent />
+    </div>
+  );
 }
 export default Page;

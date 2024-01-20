@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "wortel",
+      "price": 2000
+    },
+    {
+      "id": 2,
+      "productName": "apel",
+      "price": 3000
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "danady"
+    },
+    {
+      "id": 2,
+      "name": "bani"
+    }
+  ]
+}
