@@ -15,6 +15,8 @@ function ProtectedPage({ children, userOnly, guestOnly, adminOnly }) {
   const [isLoading, setIsLoading] = useState(true); //ini
   const nav = useNavigate();
   useEffect(() => {
+    console.log("cekk");
+
     console.log(userSelector, "ini user");
     console.log(adminOnly, userSelector.id, guestOnly);
     if (adminOnly && userSelector?.role != "admin") {

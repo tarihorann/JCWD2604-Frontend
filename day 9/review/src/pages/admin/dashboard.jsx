@@ -1,6 +1,6 @@
 /** @format */
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { axiosInstance } from "../../api/axios";
 import { NavbarAdminComponent } from "../../components/navbar";
 import AdminProductCard from "../../components/admin/adminCard";
@@ -100,6 +100,8 @@ function AdminDashBoard() {
   useEffect(() => {
     fetchProducts();
   }, [search]);
+
+  const upload = useRef(null);
   return (
     <>
       <NavbarAdminComponent />
@@ -157,14 +159,24 @@ function AdminDashBoard() {
                     <td> Product Image</td>
                     <td>
                       <input
-                        type="text"
+                        type="file"
                         placeholder="Image URL"
-                        className="border p-1  w-96 "
+                        className="border p-1  w-96 hidden"
                         required
                         id="img"
-                        value={formik.values.img}
-                        onChange={formik.handleChange}
+                        // value={formik.values.img}
+                        // onChange={formik.handleChange}
+                        ref={upload}
                       />
+                      <button
+                        className="bg-full bg-green-500  w-32 text-white rounded-md "
+                        type="button"
+                        onClick={() => {
+                          upload.current.click();
+                        }}
+                      >
+                        upload
+                      </button>
                     </td>
                   </tr>
                   <tr>

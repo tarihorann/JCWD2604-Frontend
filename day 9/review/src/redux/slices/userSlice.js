@@ -12,6 +12,8 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     functionLogin: (state, action) => {
+      console.log("hello");
+      console.log(action.payload, "cek");
       return {
         ...state,
         ...action.payload,

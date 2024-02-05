@@ -14,14 +14,19 @@ function App() {
 
   const keepLogin = () => {
     console.log("test");
-    const id = localStorage.getItem("user");
+    const token = localStorage.getItem("user");
     axiosInstance()
-      .get(`/users/${id}`)
+      .get(`/users/keep-login`, {
+        headers: {
+          Authorization: token,
+        },
+      })
       .then((res) => {
-        delete res.data.password;
-        console.log(res.data);
+        // delete res.data.password;
+        console.log(res.data, "refresh");
+        localStorage.setItem("user", res.data.token);
 
-        dispatch(functionLogin(res.data));
+        dispatch(functionLogin(res.data.result));
       })
       .catch((err) => console.log(err))
       .finally(() => {

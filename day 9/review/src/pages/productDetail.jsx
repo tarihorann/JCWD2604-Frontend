@@ -3,7 +3,7 @@
 import { useParams } from "react-router-dom";
 import NavbarComponent from "../components/navbar";
 import { axiosInstance } from "../api/axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
@@ -59,6 +59,7 @@ function ProductDetail() {
       })
       .catch((err) => console.log(err.message));
   };
+  const thisRef = useRef(null);
 
   useEffect(() => {
     fetchProduct();
@@ -73,7 +74,9 @@ function ProductDetail() {
             <img src={product.img} alt="" />
           </div>
           <div className=" pt-10 flex flex-col gap-5  w-9/12">
-            <div className=" font-bold text-3xl">{product.productName}</div>
+            <div className=" font-bold text-3xl" ref={thisRef}>
+              {product.productName}
+            </div>
             <div className="my-2">
               <div>start from</div>
               <div className="font-bold text-3xl">
