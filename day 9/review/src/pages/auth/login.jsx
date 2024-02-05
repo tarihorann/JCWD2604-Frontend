@@ -4,35 +4,37 @@ import { useDispatch } from "react-redux";
 import { functionLogin } from "../../redux/slices/userSlice";
 import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "../../api/axios";
+import { userLogin } from "../../redux/middleware/user";
 
 function LoginPage() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const login = () => {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    axiosInstance()
-      .get("/users", {
-        params: { email, password },
-      })
-      .then((res) => {
-        if (res.data?.length) {
-          const { name } = res.data[0];
+    dispatch(userLogin({ email, password }));
 
-          alert("welcome " + name);
-          delete res.data[0]?.password;
-          dispatch(functionLogin(...res.data));
+    // axiosInstance()
+    //   .get("/users", {
+    //     params: { email, password },
+    //   })
+    //   .then((res) => {
+    //     if (res.data?.length) {
+    //       const { name } = res.data[0];
 
-          localStorage.setItem("user", res.data[0].id);
-        } else {
-          alert("user not found");
-        }
+    //       alert("welcome " + name);
+    //       delete res.data[0]?.password;
+    //       dispatch(functionLogin(...res.data));
 
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
+    //       localStorage.setItem("user", res.data[0].id);
+    //     } else {
+    //       alert("user not found");
+    //     }
+
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => console.log(err));
   };
 
   return (

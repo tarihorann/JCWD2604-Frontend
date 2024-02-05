@@ -1,12 +1,13 @@
 /** @format */
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { axiosInstance } from "../api/axios";
 import { Link } from "react-router-dom";
 import Search from "../assets/search.png";
 function ProductListComponent() {
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState([]);
+
   const fetchProducts = () => {
     axiosInstance()
       .get("/products/", {
@@ -22,6 +23,14 @@ function ProductListComponent() {
   useEffect(() => {
     fetchProducts();
   }, [search]);
+
+  const ps = useMemo(
+    () => [...products].sort((a, b) => a.price - b.price),
+    [products]
+  );
+  // const ps = [...products].sort((a, b) => a.price - b.price);
+
+  console.log(ps);
   return (
     <div className="w-full">
       <div className=" mt-5 px-7 max-w-screen-2xl  w-full">
@@ -38,7 +47,7 @@ function ProductListComponent() {
       </div>
 
       <div className="grid max-w-screen-2xl w-full grid-cols-4 p-7 gap-3 ">
-        {products.map((product, key) => (
+        {ps?.map((product, key) => (
           <ProductCard {...product} key={key} />
         ))}
       </div>
